@@ -1,0 +1,446 @@
+
+
+
+
+/* Style de base pour l'en-tête */
+header {
+  background-image: linear-gradient(rgb(169, 167, 167), #b9cad1);
+    color: rgb(25, 25, 25);
+    height: 60px;
+    height: 80px;
+    position:sticky;
+    z-index: 3;/*placer l'en tete au dessus de tous contenue de la page*/
+    top: 0px;
+   
+  }
+  
+  /* Wrapper pour les éléments de l'en-tête */
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+  }
+  
+  /* Style du logo */
+  .logo img {
+    height: 90px;
+  }
+  /* Style de base pour la barre de recherche */
+  .search-form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .ch input[type="text"] {
+  background-color: gainsboro;
+    margin-right: auto; /* pour pousser le bouton Se connecter tout à droite */
+    width: 250px;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    flex: 1;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-right: 10px; /* pour décaler la barre de recherche vers la gauche */
+  }
+  
+  
+  .ch button[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    padding: 8px 6px;
+    cursor: pointer;
+  }
+  
+  /* Style pour l'icône de recherche */
+  .search-form button[type="submit"] i {
+    font-size: 36px;
+  }
+  
+  
+  
+  /* Style de la barre de navigation */
+  .nav-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-bar li {
+    margin: 0 10px;
+  }
+  
+   a {
+    color: rgb(10, 9, 9);
+    text-decoration: none;
+  }
+  a:hover{
+    color :grey;
+  }
+  
+  /* Style du bouton de menu hamburger */
+  .c{
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Media queries pour la transformation de la barre de navigation en barre latérale */
+  @media screen and (max-width: 768px) {
+    .header-wrapper {
+      flex-direction: row;
+    }
+  
+    .nav-bar {
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      z-index: 1;
+      background-image: linear-gradient(rgb(169, 167, 167), #b9cad1);
+    }
+  
+    .nav-bar ul {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  
+    .nav-bar li {
+      margin: 10px 0;
+    }
+  
+    .c {
+      display: block;
+    }
+  }
+  .sidebar {
+    display:none;
+  }
+  .sidebar ul{
+  
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  
+  }
+  .sidebar li {
+    margin-left: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .menu {
+      display: none;
+    }
+  
+    .bar {
+      display: block;
+      border-radius: 0%;
+      border-bottom: #fff;
+    }
+  
+    .sidebar {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 200px;
+      height: 100vh;
+      background-image: linear-gradient(rgb(169, 167, 167), #b9cad1);
+      transition: all 0.3s ease-in-out;
+    }
+    .sidebar ul{
+      display: grid;
+    }
+    .sidebar li{
+      font-family: 'Gill Sans';
+    }
+  
+    .sidebar.active {
+      left: 0;
+    }
+  } .sub-menu {
+    position: absolute;
+   
+    z-index: 1;
+    background-color:whitesmoke;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .collection ul {
+    display: grid;
+  }
+  
+   .collection:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+   
+  
+  .image-horizontal {
+      /* Permet de rendre l'image en bloc pour qu'elle soit centrée */
+      margin: 0 auto; /* Centre l'image horizontalement */
+      max-width: 100%; /* Définit la largeur maximale de l'image à 100% pour qu'elle ne dépasse pas la largeur de son conteneur */
+      height: auto; /* Permet à la hauteur de l'image de s'ajuster en proportion à la largeur */
+   }
+  .Nosproduits{
+      display: block;
+      text-align: center;
+      margin-top:20px;}
+      .Nosproduits h1{
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          color: #020202;
+      }
+      .titreproduit{
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 40px;
+      }
+      .produits{
+          width: 90%;/*définir la taille*/
+          display: flex;
+          flex-direction: row;/*ici on definit que les images soits l'une a coté d'autre*/
+          padding: 30px;/*définir le padding entre les photo et le haut*/
+          margin: 20px auto;
+          justify-content: center;}
+          .box{
+              width: 250px;/*définir la taille des box contenant la photo*/
+              margin: 0 10px;/*définir l'espace entre les box*/
+              box-shadow: 0 0 20px rgba(red, green, blue, alpha);
+              transition: 1s;/*le déffillement*/}
+              .box img{
+              
+                  display: block;
+                  width: 100%;
+                  border-radius: 5px;
+              }
+              .box:hover{
+                
+                  transform: scale(1.3);
+                  z-index:2;
+              }
+       
+              /*ici on regle la partie boutique*/
+  .Boutiques{
+      display: block;
+      text-align: center;
+      margin-top:10px;
+  
+  }
+  .Boutiques h1{
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     color: #020202;
+  }
+  .box2{
+      width: 250px;/*définir la taille des box contenant la photo*/
+      margin: 0 10px;/*définir l'espace entre les box*/
+      box-shadow: 0 0 20px rgba(red, green, blue, alpha);
+      transition: 1s;/*le déffillement*/
+    }
+    .box2 img{
+      display: block;
+      width: 100%;
+      border-radius: 5px;
+    }
+    .box2:hover{
+      
+   
+                  
+     
+      transform: scale(1.3);
+      z-index:2;
+  
+    }
+  
+  /*ici on régle la partie nouveauté*/
+  .Nouveauté{
+      display: block;
+      text-align: center;
+      margin-top:10px;
+  }
+  
+  .Nouveauté h1{
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: #020202;
+  }
+  .box3{
+    width: 250px;
+    margin: 0 10px;
+    box-shadow: 0 0 20px rgba(red, green, blue, alpha);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+  }
+  .box3 img{
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .box3:hover{
+    opacity: 0.7;
+  }
+
+
+   .card-header{
+      display: flex;
+      flex-wrap:wrap;
+      justify-content: space-between;}
+    .title{
+      font-size: 1,1rem;
+      font-weight: 60;
+      text-transform: uppercase;}
+      .price{
+        font-weight: 50;}
+        .content {
+          /* grow shrink basis */
+          flex: 1 0 auto;
+      }
+      .content p {
+          padding: 2vw 10vw 5vw;
+          text-align: justify;
+          
+      }
+      
+      .container {
+        min-width: 100%;
+        margin: auto;
+        position: relative;
+        background-color: #f7f6f2;
+      }
+      
+      
+      .content {
+        padding: 10px;
+        padding-bottom: 370px;
+      }
+      
+      h1 {
+        text-align: center;
+        color: #ffffff;
+      }
+      
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1170px;
+        margin: auto;
+      }
+      
+      ul {
+        list-style: none;
+      }
+      
+      .footer {
+        background-image: linear-gradient(rgb(169, 167, 167), #b9cad1);
+        padding: 70px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      
+      
+        
+      }
+      .mg{
+      height: 150px;
+      width: 150px;
+      
+      }
+      
+      .footer-col {
+        width: 25%;
+        padding: 0 15px;
+      }
+      
+      .footer-col h4 {
+        font-size: 18px;
+        color: #000000;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+        font-weight: 500;
+        position: relative;
+      }
+      
+      .footer-col h4::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10;
+        ;
+        height: 2px;
+        box-sizing: border-box;
+        width: 50px;
+      }
+      
+      .footer-col ul li:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      
+      .footer-col ul li a {
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #000000;
+        text-decoration: none;
+        font-weight: 300;
+        color: #090909;
+        display: block;
+        transition: all 0.3s ease;
+        
+      }
+      
+      .footer-col ul li a:hover {
+        color: #ffffff;
+        padding-left: 8px;
+      }
+      
+      .footer-col .social-links a {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: #ffffff;
+        margin: 0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: all 0.5s ease;
+      }
+      
+      .footer-col .social-links a:hover {
+        color: #24262b;
+        background-color: #ffffff;
+      }
+      
+      @media(max-width: 767px) {
+        .footer-col {
+            width: 50%;
+            margin-bottom: 30px;
+        }
+      
+      }
+      
+      @media(max-width: 574px) {
+        .footer-col {
+            width: 100%;
+        }
+      
+      }
+

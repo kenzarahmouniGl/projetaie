@@ -1,0 +1,47 @@
+/* Aligner le formulaire au centre de la page */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  /* Styliser les champs du formulaire */
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  /* Styliser le bouton de soumission */
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Styliser les messages d'erreur de validation */
+  .error {
+    color: #f44336;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styliser l'aperçu de la photo */
+  img {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
